@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Print header
+echo "Attached IPv4 IPs:"
+
+# Use ip command to display IPv4 addresses
+ip -4 addr show | grep inet | awk '{print $2}' | cut -d '/' -f 1
